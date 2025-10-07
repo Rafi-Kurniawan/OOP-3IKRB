@@ -50,8 +50,99 @@ Topik: [Tuliskan judul topik, misalnya "Class dan Object"]
 
 ```java
 // Prosedural
+   // HelloProcedural.java
+   public class HelloProcedural {
+      public static void main(String[] args) {
+         String nim = "240202878";
+         String nama = "Rafi Kurniawan";
+         String[] produk = {"Beras", "Pupuk", "Benih"};
+         int[] harga = {10000, 15000, 12000};
+         int total = 0;
+
+         System.out.println("Hello POS World");
+         System.out.println("NIM: " + nim + ", Nama: " + nama);
+         System.out.println("Daftar Produk:");
+
+         for (int i = 0; i < produk.length; i++) {
+            System.out.println("- " + produk[i] + ": " + harga[i]);
+            total += harga[i];
+         }
+
+         System.out.println("Total harga semua produk: " + total);
+      }
+    }
+
 // OOP
+   // HelloOOP.java
+
+// Kelas Produk merepresentasikan satu entitas "produk"
+class Produk {
+   String nama;
+   int harga;
+
+   // Konstruktor untuk membuat objek Produk baru
+   Produk(String nama, int harga) {
+      this.nama = nama;
+      this.harga = harga;
+   }
+}
+
+public class HelloOOP {
+   public static void main(String[] args) {
+      // Data identitas mahasiswa
+      String nim = "240202878";
+      String namaMhs = "Rafi Kurniawan";
+
+      // Membuat array berisi beberapa objek Produk
+      Produk[] daftar = {
+         new Produk("Beras", 24000),
+         new Produk("Pupuk", 66000),
+         new Produk("Benih", 10000)
+      };
+
+      int total = 0;
+
+      System.out.println("Hello POS World");
+      System.out.println("NIM: " + nim + ", Nama: " + namaMhs);
+      System.out.println("Daftar Produk:");
+
+      // Menampilkan semua produk menggunakan perulangan berbasis objek
+      for (Produk p : daftar) {
+         System.out.println("- " + p.nama + ": " + p.harga);
+         total += p.harga;
+      }
+
+      System.out.println("Total harga semua produk: " + total);
+   }
+}
+
 // Functional
+   // HelloFunctional.java
+import java.util.*;
+import java.util.stream.*;
+
+public class HelloFunctional {
+   public static void main(String[] args) {
+      String nim = "240202878";
+      String nama = "Rafi Kurniawan";
+
+      List<String> produk = Arrays.asList("Beras", "Pupuk", "Benih");
+      List<Integer> harga = Arrays.asList(25000, 40000, 50000);
+
+      System.out.println("Hello POS World");
+      System.out.println("NIM: " + nim + ", Nama: " + nama);
+      System.out.println("Daftar Produk:");
+
+      // Menggunakan lambda dan stream untuk menampilkan produk & harga
+      IntStream.range(0, produk.size())
+         .forEach(i -> System.out.println("- " + produk.get(i) + ": " + harga.get(i)));
+
+      // Menggunakan stream untuk menghitung total harga
+      int total = harga.stream().mapToInt(Integer::intValue).sum();
+
+      System.out.println("Total harga semua produk: " + total);
+   }
+}
 ---
 
 ## Hasil Eksekusi
@@ -69,8 +160,8 @@ Topik: [Tuliskan judul topik, misalnya "Class dan Object"]
 ---
 
 ## Kesimpulan
-(Tuliskan kesimpulan dari praktikum minggu ini.  
-Contoh: *Dengan menggunakan class dan object, program menjadi lebih terstruktur dan mudah dikembangkan.*)
+(Tuliskan kesimpulan dari praktikum minggu ini).  
+Dengan menggunakan class dan object, program menjadi lebih terstruktur dan mudah dikembangkan.
 
 ---
 
