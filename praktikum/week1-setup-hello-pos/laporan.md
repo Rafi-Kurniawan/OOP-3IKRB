@@ -1,5 +1,5 @@
-# Laporan Praktikum Minggu 1 (sesuaikan minggu ke berapa?)
-Topik: [Tuliskan judul topik, misalnya "Class dan Object"]
+# Laporan Praktikum Minggu 1
+Topik: "Paradigma dan Setup Proyek"
 
 ## Identitas
 - Nama  : Rafi Kurniawan
@@ -9,7 +9,7 @@ Topik: [Tuliskan judul topik, misalnya "Class dan Object"]
 ---
 
 ## Tujuan
-(Tuliskan tujuan praktikum minggu ini.  
+(Tuliskan tujuan praktikum minggu ini) 
 "Memahami berbagai paradigma pemrograman"
 
 ---
@@ -146,9 +146,8 @@ public class HelloFunctional {
 ---
 
 ## Hasil Eksekusi
-(Sertakan screenshot hasil eksekusi program.  
-![Screenshot hasil](screenshots/hasil.png)
-)
+(Sertakan screenshot hasil eksekusi program) 
+https://github.com/Rafi-Kurniawan/OOP-3IKRB/tree/main/praktikum/week1-setup-hello-pos/src/main/java/com/upb/agripos
 ---
 
 ## Analisis
@@ -161,16 +160,55 @@ public class HelloFunctional {
 
 ## Kesimpulan
 (Tuliskan kesimpulan dari praktikum minggu ini).  
-Dengan menggunakan class dan object, program menjadi lebih terstruktur dan mudah dikembangkan.
+Praktikum ini membantu memahami perbedaan antara tiga paradigma pemrograman — yaitu prosedural, berorientasi objek (OOP), dan fungsional.
 
 ---
 
 ## Quiz
-(1. [Tuliskan kembali pertanyaan 1 dari panduan]  
-   **Jawaban:** …  
+(1. Apakah OOP selalu lebih baik dari prosedural?  
+   **Jawaban:**
+   Tidak selalu. OOP tidak selalu lebih baik dari prosedural karena keduanya digunakan untuk kebutuhan yang berbeda.
 
-2. [Tuliskan kembali pertanyaan 2 dari panduan]  
-   **Jawaban:** …  
+2. Kapan functional programming lebih cocok digunakan dibanding OOP atau prosedural?   
+   **Jawaban:**
+   Functional programming digunakan saat program harus bebas efek samping (pure function), mudah diuji, dan mudah dijalankan secara paralel. Paradigma ini lebih efisien ketika
+   bekerja dengan data besar, transformasi data berantai, atau pemrosesan paralel karena setiap fungsi berdiri sendiri tanpa mengubah keadaan global.  
 
-3. [Tuliskan kembali pertanyaan 3 dari panduan]  
-   **Jawaban:** …  )
+3. Bagaimana paradigma (prosedural, OOP, fungsional) memengaruhi maintainability dan scalability aplikasi?  
+   **Jawaban:**
+   1. Prosedural
+      Maintainability rendah karena kode disusun berdasarkan urutan langkah dan sering bergantung pada variabel global. Saat program tumbuh besar, perubahan satu bagian dapat
+      memengaruhi bagian lain. Scalability juga rendah karena sulit menambah fitur tanpa mengubah struktur utama.
+
+   2. OOP (Object-Oriented Programming)
+      Maintainability tinggi karena struktur kode terorganisir melalui class dan objek. Setiap bagian memiliki tanggung jawab jelas, sehingga perubahan dapat dilakukan tanpa
+      memengaruhi keseluruhan sistem. Scalability juga tinggi karena konsep inheritance dan polymorphism memungkinkan penambahan fitur baru tanpa mengubah kode lama.
+
+   3. Fungsional
+      Maintainability tinggi karena setiap fungsi bersifat independen dan tidak memiliki efek samping. Perubahan satu fungsi tidak memengaruhi fungsi lain. Scalability juga
+      tinggi karena paradigma ini mendukung pemrosesan paralel dan komposisi fungsi yang efisien, sehingga mudah diperluas untuk menangani beban data yang lebih besar.
+
+4. Mengapa OOP lebih cocok untuk mengembangkan aplikasi POS dibanding prosedural?
+   **Jawaban:**
+   1. Struktur berbasis objek
+      Aplikasi POS memiliki entitas seperti produk, pelanggan, transaksi, dan kasir. Dalam OOP, setiap entitas dapat dibuat sebagai objek dengan atribut dan perilaku sendiri,        sehingga kode lebih terorganisir.
+
+   2. Kemudahan pengembangan dan pemeliharaan
+      OOP memungkinkan pemisahan tanggung jawab melalui class. Perubahan pada satu class tidak memengaruhi class lain, sehingga sistem mudah diperbarui atau diperluas tanpa
+      mengubah keseluruhan program.
+
+   3. Dukungan terhadap penggunaan ulang kode
+      OOP mendukung konsep inheritance dan polymorphism yang memungkinkan penggunaan ulang kode. Misalnya, class produk dapat diturunkan menjadi produk makanan, minuman, atau
+      pakaian tanpa menulis ulang logika utama.
+
+   4. Skalabilitas tinggi
+      OOP memudahkan penambahan fitur baru, seperti laporan penjualan, sistem diskon, atau integrasi pembayaran digital, tanpa mengganggu struktur program yang sudah ada.
+
+   5. Keterhubungan antar komponen sistem
+      Dalam aplikasi POS, objek dapat saling berinteraksi dengan jelas. Misalnya, objek transaksi dapat berhubungan dengan objek produk dan pelanggan secara teratur, sehingga
+      sistem lebih konsisten dan mudah dipahami.
+
+5. Bagaimana paradigma fungsional dapat membantu mengurangi kode berulang (boilerplate code)?
+   **Jawaban:**
+   Paradigma fungsional mengurangi kode berulang karena berfokus pada penggunaan fungsi murni, komposisi fungsi, dan ekspresi deklaratif untuk menggantikan pola kode yang
+   berulang.
