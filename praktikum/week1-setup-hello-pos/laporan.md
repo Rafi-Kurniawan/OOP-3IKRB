@@ -50,98 +50,50 @@ Topik: "Paradigma dan Setup Proyek"
 
 ```java
 // Prosedural
-   // HelloProcedural.java
-   public class HelloProcedural {
-      public static void main(String[] args) {
-         String nim = "240202878";
-         String nama = "Rafi Kurniawan";
-         String[] produk = {"Beras", "Pupuk", "Benih"};
-         int[] harga = {10000, 15000, 12000};
-         int total = 0;
-
-         System.out.println("Hello POS World");
-         System.out.println("NIM: " + nim + ", Nama: " + nama);
-         System.out.println("Daftar Produk:");
-
-         for (int i = 0; i < produk.length; i++) {
-            System.out.println("- " + produk[i] + ": " + harga[i]);
-            total += harga[i];
-         }
-
-         System.out.println("Total harga semua produk: " + total);
-      }
+// public class HelloProsedural {
+    public static void main(String[] args) {
+        String name = "Rafi Kurniawan";
+        String nim = "240202878";
+        greet(name, nim);
     }
 
+    static void greet(String name, String nim) {
+        System.out.println("Hello World, I am " + name + "-" + nim);
+    }
+}
+
 // OOP
-   // HelloOOP.java
+// class HelloWorld {
+    private String name;
+    private String nim;
 
-// Kelas Produk merepresentasikan satu entitas "produk"
-class Produk {
-   String nama;
-   int harga;
+    public HelloWorld(String name, String nim) {
+        this.name = name;
+        this.nim = nim;
+    }
 
-   // Konstruktor untuk membuat objek Produk baru
-   Produk(String nama, int harga) {
-      this.nama = nama;
-      this.harga = harga;
-   }
+    public void greet() {
+        System.out.println("Hello World, I am " + name + "-" + nim);
+    }
 }
 
 public class HelloOOP {
-   public static void main(String[] args) {
-      // Data identitas mahasiswa
-      String nim = "240202878";
-      String namaMhs = "Rafi Kurniawan";
-
-      // Membuat array berisi beberapa objek Produk
-      Produk[] daftar = {
-         new Produk("Beras", 24000),
-         new Produk("Pupuk", 66000),
-         new Produk("Benih", 10000)
-      };
-
-      int total = 0;
-
-      System.out.println("Hello POS World");
-      System.out.println("NIM: " + nim + ", Nama: " + namaMhs);
-      System.out.println("Daftar Produk:");
-
-      // Menampilkan semua produk menggunakan perulangan berbasis objek
-      for (Produk p : daftar) {
-         System.out.println("- " + p.nama + ": " + p.harga);
-         total += p.harga;
-      }
-
-      System.out.println("Total harga semua produk: " + total);
-   }
+    public static void main(String[] args) {
+        HelloWorld hello = new HelloWorld("Rafi Kurniawan", "240202878");
+        hello.greet();
+    }
 }
 
 // Functional
-   // HelloFunctional.java
-import java.util.*;
-import java.util.stream.*;
+// import java.util.function.BiFunction;
 
 public class HelloFunctional {
-   public static void main(String[] args) {
-      String nim = "240202878";
-      String nama = "Rafi Kurniawan";
+    public static void main(String[] args) {
+        BiFunction<String, String, String> greet = (name, nim) ->
+            "Hello World, I am " + name + "-" + nim;
 
-      List<String> produk = Arrays.asList("Beras", "Pupuk", "Benih");
-      List<Integer> harga = Arrays.asList(25000, 40000, 50000);
-
-      System.out.println("Hello POS World");
-      System.out.println("NIM: " + nim + ", Nama: " + nama);
-      System.out.println("Daftar Produk:");
-
-      // Menggunakan lambda dan stream untuk menampilkan produk & harga
-      IntStream.range(0, produk.size())
-         .forEach(i -> System.out.println("- " + produk.get(i) + ": " + harga.get(i)));
-
-      // Menggunakan stream untuk menghitung total harga
-      int total = harga.stream().mapToInt(Integer::intValue).sum();
-
-      System.out.println("Total harga semua produk: " + total);
-   }
+        System.out.println(greet.apply("Rafi Kurniawan", "240202878"));
+    }
 }
 ---
 
